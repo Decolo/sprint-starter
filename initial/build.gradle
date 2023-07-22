@@ -4,6 +4,12 @@ plugins {
 	id 'java'
 }
 
+ext {
+	mysqlConnectorVersion = '8.0.33'
+}
+
+
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -14,6 +20,14 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "mysql:mysql-connector-java:$mysqlConnectorVersion"
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	implementation 'jakarta.validation:jakarta.validation-api:3.0.0'
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
